@@ -41,12 +41,12 @@ class TestCIC(Event):
             print (threading.current_thread().name)
             print ('sunny2')
 
-    def test_1(self):
-        log = logging.getLogger('test_1')
-        time.sleep(1)
-        print('after 1 sec')
-        time.sleep(1)
-        log.debug('after 2 sec')
-        time.sleep(1)
-        log.debug('after 3 sec')
-        assert 1, 'should pass'
+    # def test_1(self):
+    #     log = logging.getLogger('test_1')
+    #     time.sleep(1)
+    #     print('after 1 sec')
+    #     time.sleep(1)
+    #     log.debug('after 2 sec')
+    #     time.sleep(1)
+    #     log.debug('after 3 sec')
+    #     assert 1, 'should pass'

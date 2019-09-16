@@ -1,6 +1,6 @@
 from Request.Basic import Basic
 from Config.Config import Config
-from Datacenter.Propertygeter import Property
+#from Datacenter.Propertygeter import Property
 
 class SentRequest(Basic):
     sessionid=0

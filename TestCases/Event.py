@@ -1,5 +1,5 @@
 import unittest
-from Datacenter.Propertygeter import Property
+#from Datacenter.Propertygeter import Property
 from ParameterFactory.Parameter import Parameter
 from Request import SentRequest
 from Request.Basic import Basic

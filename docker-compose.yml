@@ -1,0 +1,10 @@
+version: '3'
+services:
+  test:
+    build: .
+    image: multiple_thread_automation_test:tag
+    container_name: multiple_thread_automation_test
+    volumes: 
+    - ./sunnytest:/multiple_thread_automation_test/sunnytest"
+
+
