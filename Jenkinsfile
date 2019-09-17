@@ -5,7 +5,7 @@ properties([
     pipelineTriggers([cron('H H/6 * * *')]),
 ])
 
-nodeWithTimeout('docker') {
+nodeWithTimeout('kaige8531917') {
     deleteDir()
 
     stage('Checkout') {
