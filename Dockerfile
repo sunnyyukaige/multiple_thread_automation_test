@@ -14,4 +14,4 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 VOLUME [ "/multiple_thread_automation_test/sunnytest" ]
 # Run app.py when the container launches
 CMD pytest --junit-xml=/multiple_thread_automation_test/sunnytest/reportbytester.xml
-COPY ./sunnytest /multiple_thread_automation_test/sunnytest
+COPY . /multiple_thread_automation_test/sunnytest
