@@ -22,7 +22,7 @@ nodeWithTimeout('master') {
 
 void nodeWithTimeout(String label, def body) {
     node(label) {
-        timeout(time: 40, unit: 'MINUTES') {
+        timeout(time: 500, unit: 'MINUTES') {
             body.call()
         }
     }
