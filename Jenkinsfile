@@ -13,10 +13,10 @@ nodeWithTimeout('master') {
     }
   
     stage('Publish') {
-            infra.withDockerCredentials {
-                sh 'docker-compose build'
-                sh 'docker-compose up'
-            }
+        sh 'docker-compose build'
+        echo 'docker-compose build finished'
+        sh 'docker-compose up'
+        echo 'docker-compose up finished' 
         }
 }
 
