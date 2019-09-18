@@ -2,11 +2,11 @@
 
 #behave==1.2.6
 
-jmespath==0.9.3
+jmespath
 
 
 pytest
-PyYAML==3.12
-requests==2.18.4
-selenium==3.8.1
+PyYAML
+requests
+selenium
 
