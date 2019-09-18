@@ -10,9 +10,11 @@ nodeWithTimeout('master') {
 
     stage('Checkout') {
         checkout scm
+        sh 'docker rm multiple_thread_automation_test'
     }
   
     stage('Publish') {
+
         sh 'docker-compose build'
         echo 'docker-compose build finished'
         sh 'docker-compose up'
