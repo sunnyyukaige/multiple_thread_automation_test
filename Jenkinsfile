@@ -29,6 +29,11 @@ nodeWithTimeout('master') {
         echo 'docker-compose up finished' 
         }
 }
+post{
+    success {
+       echo 'pipeline post success'
+    }
+}
 
 void nodeWithTimeout(String label, def body) {
     node(label) {
