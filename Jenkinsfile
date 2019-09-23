@@ -10,7 +10,15 @@ nodeWithTimeout('master') {
 
     stage('Checkout') {
         checkout scm
-        sh 'docker rm multiple_thread_automation_test'
+    }
+
+    try{
+        stage('prepare'){
+            sh 'docker rm multiple_thread_automation_test'
+        }
+    }
+    catch(Exception e){
+        echo 'No such container: multiple_thread_automation_test'
     }
   
     stage('Publish') {
