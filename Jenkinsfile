@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-
+pipeline{
 properties([
     buildDiscarder(logRotator(numToKeepStr: '50', artifactNumToKeepStr: '5')),
     pipelineTriggers([cron('H H/6 * * *')]),
@@ -41,4 +41,5 @@ void nodeWithTimeout(String label, def body) {
             body.call()
         }
     }
+}
 }
