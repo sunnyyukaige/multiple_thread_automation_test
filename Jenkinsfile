@@ -1,4 +1,4 @@
-#!/usr/bin/env groovy
+
 //pipeline{
 // properties([
 //     buildDiscarder(logRotator(numToKeepStr: '50', artifactNumToKeepStr: '5')),
