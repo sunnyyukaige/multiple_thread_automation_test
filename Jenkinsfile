@@ -1,38 +1,48 @@
 #!/usr/bin/env groovy
-pipeline{
+//pipeline{
 // properties([
 //     buildDiscarder(logRotator(numToKeepStr: '50', artifactNumToKeepStr: '5')),
 //     pipelineTriggers([cron('H H/6 * * *')]),
 // ])
 
-stages {
-    deleteDir()
+// stages {
+//     deleteDir()
 
-    stage('Checkout') {
-        checkout scm
-    }
+//     stage('Checkout') {
+//         checkout scm
+//     }
 
-    try{
-        stage('prepare'){
-            sh 'docker rm multiple_thread_automation_test'
-        }
-    }
-    catch(Exception e){
-        echo 'No such container: multiple_thread_automation_test'
-    }
+//     try{
+//         stage('prepare'){
+//             sh 'docker rm multiple_thread_automation_test'
+//         }
+//     }
+//     catch(Exception e){
+//         echo 'No such container: multiple_thread_automation_test'
+//     }
   
-    stage('Publish') {
+//     stage('Publish') {
 
-        sh 'docker-compose build'
-        echo 'docker-compose build finished'
-        sh 'docker-compose up'
-        echo 'docker-compose up finished' 
+//         sh 'docker-compose build'
+//         echo 'docker-compose build finished'
+//         sh 'docker-compose up'
+//         echo 'docker-compose up finished' 
+//         }
+// }
+// post{
+//     success {
+//        echo 'pipeline post success'
+//     }
+// }
+// }
+pipeline {
+    agent any
+    stages {
+        stage('Example') {
+            steps {
+                echo 'Hello World'
+            }
         }
-}
-post{
-    success {
-       echo 'pipeline post success'
     }
-}
-}
+}　
 
