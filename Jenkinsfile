@@ -5,7 +5,7 @@ properties([
     pipelineTriggers([cron('H H/6 * * *')]),
 ])
 
-nodeWithTimeout('master') {
+stages {
     deleteDir()
 
     stage('Checkout') {
@@ -34,12 +34,6 @@ post{
        echo 'pipeline post success'
     }
 }
-
-void nodeWithTimeout(String label, def body) {
-    node(label) {
-        timeout(time: 500, unit: 'MINUTES') {
-            body.call()
-        }
-    }
 }
+
 }
