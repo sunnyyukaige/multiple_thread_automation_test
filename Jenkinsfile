@@ -36,7 +36,7 @@
 // }
 // }
 pipeline {
-    agent  docker 
+    agent  { docker 'docker' }
     stages {
         stage('build') {
             steps {
