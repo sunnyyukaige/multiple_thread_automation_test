@@ -36,7 +36,7 @@
 // }
 // }
 pipeline {
-    agent any
+    agent { docker 'master' }
     stages {
         stage('Example') {
             steps {
