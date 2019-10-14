@@ -66,13 +66,14 @@ stages {
         }
     }
 }
-options{retry(2)}
+options {retry(2)}
 triggers{githubPush()}
 post{
     success {
        echo 'pipeline post success'
     }
-    publishHTML(target:[reportDir:'/multiple_thread_automation_test/sunnytest/',
+    always{publishHTML(target:[reportDir:'/multiple_thread_automation_test/sunnytest/',
     reportFiles:'reportbytester.html'])
+    }
 }
 }
