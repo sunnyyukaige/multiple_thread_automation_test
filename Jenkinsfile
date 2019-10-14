@@ -36,8 +36,8 @@
 // }
 // }
 pipeline {
-    agent  any
-  stages {
+agent  any
+stages {
     deleteDir()
 
     stage('Checkout') {
@@ -66,4 +66,4 @@ post{
        echo 'pipeline post success'
     }
 }
-
+}
