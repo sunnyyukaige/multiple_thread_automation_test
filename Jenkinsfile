@@ -37,7 +37,7 @@
 // }
 pipeline {
 agent any
-options {timeout(time:30,unit:'MINUTES')}
+options {timeout(time:30,unit:'MINUTES')，retry(2)}
 stages {
     
 
@@ -66,7 +66,7 @@ stages {
         }
     }
 }
-options {retry(2)}
+
 triggers{githubPush()}
 post{
     success {
