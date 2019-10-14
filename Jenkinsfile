@@ -37,6 +37,7 @@
 // }
 pipeline {
 agent any
+options {timeout(time:30,unit:'MINUTES')}
 stages {
     
 
@@ -65,9 +66,13 @@ stages {
         }
     }
 }
+options{retry(2)}
+triggers{githubPush()}
 post{
     success {
        echo 'pipeline post success'
     }
+    publishHTML(target:[reportDir:'/multiple_thread_automation_test/sunnytest/',
+    reportFiles:'reportbytester.html'])
 }
 }

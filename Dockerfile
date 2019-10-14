@@ -13,5 +13,5 @@ COPY requirements.txt requirements.txt
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 #VOLUME [ "/multiple_thread_automation_test/sunnytest" ]
 # Run app.py when the container launches
-CMD pytest --junit-xml=/multiple_thread_automation_test/sunnytest/reportbytester.xml
+CMD pytest --junit-html=/multiple_thread_automation_test/sunnytest/reportbytester.html
 #COPY . /multiple_thread_automation_test/sunnytest
