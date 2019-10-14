@@ -41,14 +41,14 @@ stages {
     
 
     stage('Checkout') {
-        step{
+        steps{
             checkout scm
         }
     }
 
     try{
         stage('prepare'){
-           step{
+           steps{
                sh 'docker rm multiple_thread_automation_test'} 
         }
     }
@@ -57,7 +57,7 @@ stages {
     }
   
     stage('Publish') {
-      step{
+      steps{
         sh 'docker-compose build'
         echo 'docker-compose build finished'
         sh 'docker-compose up'
