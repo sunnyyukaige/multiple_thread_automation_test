@@ -37,12 +37,33 @@
 // }
 pipeline {
     agent  any
-    stages {
-        stage('build') {
-            steps {
-                sh 'echo sunny'
-            }
+  stages {
+    deleteDir()
+
+    stage('Checkout') {
+        checkout scm
+    }
+
+    try{
+        stage('prepare'){
+            sh 'docker rm multiple_thread_automation_test'
         }
+    }
+    catch(Exception e){
+        echo 'No such container: multiple_thread_automation_test'
+    }
+  
+    stage('Publish') {
+
+        sh 'docker-compose build'
+        echo 'docker-compose build finished'
+        sh 'docker-compose up'
+        echo 'docker-compose up finished' 
+        }
+}
+post{
+    success {
+       echo 'pipeline post success'
     }
 }
 
