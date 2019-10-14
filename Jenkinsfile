@@ -38,11 +38,11 @@
 pipeline {
     agent { docker 'master' }
     stages {
-        stage('Example') {
+        stage('build') {
             steps {
-                echo 'Hello World'
+                sh 'echo sunny'
             }
         }
     }
-}　
+}
 
