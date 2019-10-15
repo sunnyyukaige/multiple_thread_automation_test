@@ -74,7 +74,7 @@ post{
        echo 'pipeline post success'
     }
     always{
-        publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: false, reportDir: 'multiple_thread_automation_test/sunnytest/', reportFiles: 'reportbytester.html', reportName: 'HTML Report', reportTitles: ''])
+        publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: false, reportDir: 'sunnytest/', reportFiles: 'reportbytester.html', reportName: 'HTML Report', reportTitles: ''])
     }
 }
 }
