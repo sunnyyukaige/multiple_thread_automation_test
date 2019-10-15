@@ -37,7 +37,8 @@
 // }
 pipeline {
 agent any
-options {[timeout(time:30,unit:'MINUTES'),retry(2)]}
+options {timeout(time:30,unit:'MINUTES')
+retry(2)}
 stages {
     
 
